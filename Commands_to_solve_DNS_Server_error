@@ -1,0 +1,9 @@
+sudo resolvconf -u
+Warning message found after this command
+/etc/resolvconf/update.d/libc: Warning: /etc/resolv.conf is not a symbolic link to /run/resolvconf/resolv.conf
+sudo rm -rf /etc/resolv.conf
+sudo ln -s ../run/resolvconf/resolv.conf /etc/resolv.conf
+sudo resolvconf -u
+sudo rm -rf /etc/resolv.conf
+sudo ln -s ../run/resolvconf/resolv.conf /etc/resolv.conf
+sudo resolvconf -u
