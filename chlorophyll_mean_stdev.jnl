@@ -1,0 +1,9 @@
+use A2009365.L3m_DAY_CHL_chlor_a_4km.nc
+let chl=chlor_a[x=55:75,y=15:30]
+let chlor=if (chl ge 0 and chl le 5) then chl else 999
+set var/bad=999 chlor
+let mean_chl=chlor[x=@ave,y=@ave]
+let space_std_chl=(chlor-mean_chl)^2
+let var_chl=space_std_chl[x=@ave,y=@ave]
+let std_chl=(var_chl)^0.5
+list/file=chl_2009.dat/append/nohead  mean_chl,std_chl
